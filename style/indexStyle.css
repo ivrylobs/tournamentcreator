@@ -1,9 +1,14 @@
-ul {
+nav {
+    position: fixed;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: black;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 li {
@@ -31,6 +36,23 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 
+.menu_button {
+    float: right;
+}
+
 link {
     float: right;
+}
+
+.signup {
+    background-color: #4CAF50;
+}
+
+body {
+    background-color: #333;
+}
+
+p {
+    color: white;
+    padding: 16px;
 }
