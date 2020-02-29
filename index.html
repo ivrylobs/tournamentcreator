@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="stylesheet" href="./style/indexStyle.css" />
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
 
-	<body>
-		<div id="event_board"></div>
+<head>
+    <link rel="stylesheet" href="./style/indexStyle.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tournament Creator</title>
+</head>
 
-		<script>
-			import { Observable } from 'rxjs'
-			var welcomePara = document.createElement("p");
-			var divContainer = document.getElementById("event_board");
-			welcomePara.textContent = "Welcome to Tournament Creator";
-			divContainer.appendChild(welcomePara);
+<body>
+    <ul>
+        <div class="logo">
+            <img src="/images/Tournament.png" alt="" width="46" />
+        </div>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#signup">Sign up</a></li>
+        <li><a href="#login">Login</a></li>
+        <a rel="nofollow" class="link" href="https://challonge.com/user_session/new?continue=%2F">Log in</a>
+    </ul>
 
-			
-		</script>
-	</body>
+    <script>
+        import {
+            Observable
+        } from 'rxjs'
+        var welcomePara = document.createElement("p");
+        var divContainer = document.getElementById("event_board");
+        welcomePara.textContent = "Welcome to Tournament Creator";
+        divContainer.appendChild(welcomePara);
+    </script>
+
+
+
+</body>
+
 </html>
