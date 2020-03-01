@@ -132,6 +132,10 @@
             color: white;
             padding: 16px;
         }
+
+        .reg {
+            color: black;
+        }
         
         .about-section {
             padding: 50px;
