@@ -1,59 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<link rel="stylesheet" href="./style/indexStyle.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tournament Creator</title>
+		<script src="https://unpkg.com/rxjs@6.5.4/bundles/rxjs.umd.min.js"></script>
+	</head>
 
-<head>
-    <link rel="stylesheet" href="./style/indexStyle.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tournament Creator</title>
-</head>
+	<body>
+		<nav>
+			<div class="logo">
+				<img src="/images/Tournament.png" alt="" width="46" />
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+			</div>
 
-<body>
-    <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="/images/Tournament.png" alt="" width="46" />
-            </a>
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="tournament.html">Tournament</a></li>
-            <li><a href="communities.html">Communities</a></li>
-            <li><a href="about.html">About</a></li>
-        </div>
+			<div class="menu_button">
+				<li class="signup"><a href="#signup">Sign up</a></li>
+				<li><a href="#login">Login</a></li>
+			</div>
+		</nav>
 
-        <div class="menu_button">
-            <li class="signup"><a href="#signup">Sign up</a></li>
-            <li><a href="#login">Login</a></li>
-        </div>
-    </nav>
-    <p>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas
-        <br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas
-        <br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas
-        <br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas
-        <br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf
-        sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>sdfasfasdf sdafsdaf sdafsdafsadf ddv sdfasfas<br>
-    </p>
-    <script>
-    </script>
+		<script>
+			const { range } = rxjs;
+			const { map, filter } = rxjs.operators;
+			const { Observable } = rxjs;
 
+			const observable = new Observable(subscriber => {
+				subscriber.next(1);
+				subscriber.next(2);
+				setTimeout(() => {
+					subscriber.next(00);
+					subscriber.complete();
+				}, 1000);
+			})
 
-</body>
+			observable.subscribe({
+				next(x) {console.log(x)},
+				error(err) { console.error('something wrong occurred: ' + err); },
+  				complete() { console.log('done'); }
+			})
 
+			range(1, 200)
+				.pipe(
+					filter(x => x % 2 === 1),
+					map(x => x + x)
+				)
+				.subscribe(x => console.log(x));
+		</script>
+	</body>
 </html>
