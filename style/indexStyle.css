@@ -117,7 +117,7 @@ link {
 }
 
 body {
-	background-color: #333;
+	background: linear-gradient(315deg, #0000FF, #4169E1, rgba(20,8,5,0.6), rgba(20,8,5,0.9));
 	padding: 16px;
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
