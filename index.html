@@ -1,70 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="stylesheet" href="./style/indexStyle.css" />
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Tournament Creator</title>
-		<script src="https://unpkg.com/rxjs@6.5.4/bundles/rxjs.umd.min.js"></script>
-	</head>
 
-	<body>
-		<nav>
-			<div class="logo">
-				<a href="index.html">
-					<img src="/images/Tournament.png" alt="" width="46" />
-				</a>
-				<li><a class="active" href="index.html">Home</a></li>
-				<li><a href="tournament.html">Tournament</a></li>
-				<li><a href="communities.html">Communities</a></li>
-				<li><a href="about.html">About</a></li>
-			</div>
+<head>
+	<link rel="stylesheet" href="./style/indexStyle.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Tournament Creator</title>
+	<script src="https://unpkg.com/rxjs@6.5.4/bundles/rxjs.umd.min.js"></script>
+</head>
 
-			<div class="menu_button">
-				<li class="signup"><a href="register.html">Sign up</a></li>
-				<li><a href="login.html">Login</a></li>
-			</div>
-		</nav>
-
-		<div class="imgLeft">
-			<img src="/images/community.png" alt="" width="50%" />
+<body>
+	<nav>
+		<div class="logo">
+			<a href="index.html">
+				<img src="/images/Tournament.png" alt="" width="46" />
+			</a>
+			<li><a class="active" href="index.html">Home</a></li>
+			<li><a href="tournament.html">Tournament</a></li>
+			<li><a href="communities.html">Communities</a></li>
+			<li><a href="about.html">About</a></li>
 		</div>
 
-		<div class="wordRigh">
-			<h3>Tournament Creator Communities</h3>
+		<div class="menu_button">
+			<li class="signup"><a href="register.html">Sign up</a></li>
+			<li><a href="login.html">Login</a></li>
 		</div>
-		<script>
-			const { range } = rxjs;
-			const { map, filter } = rxjs.operators;
-			const { Observable } = rxjs;
+	</nav>
 
-			const observable = new Observable(subscriber => {
-				subscriber.next(1);
-				subscriber.next(2);
-				setTimeout(() => {
-					subscriber.next(00);
-					subscriber.complete();
-				}, 1000);
-			});
+	<div class="picture"> 
+		<img src="/images/community.png" width="50%" height="auto" alt="My test image" align="left">
+		<br><br><br><br><br><br><br>
+		<h2 class="heading">Tournament Communities</h2>
+		<p class="sub">Effortlessly host multiple tournaments, leagues and events for your loyal members.
+		</p>
+		<a class="btn btn-primary btn-lg -wider -xs-full-width" href="/communities.html">Find a community</a>
+	
+	</div>
 
-			observable.subscribe({
-				next(x) {
-					console.log(x);
-				},
-				error(err) {
-					console.error("something wrong occurred: " + err);
-				},
-				complete() {
-					console.log("done");
-				}
-			});
 
-			range(1, 200)
-				.pipe(
-					filter(x => x % 2 === 1),
-					map(x => x + x)
-				)
-				.subscribe(x => console.log(x));
-		</script>
-	</body>
+	<script>
+		const { range } = rxjs;
+		const { map, filter } = rxjs.operators;
+		const { Observable } = rxjs;
+
+		const observable = new Observable(subscriber => {
+			subscriber.next(1);
+			subscriber.next(2);
+			setTimeout(() => {
+				subscriber.next(00);
+				subscriber.complete();
+			}, 1000);
+		});
+
+		observable.subscribe({
+			next(x) {
+				console.log(x);
+			},
+			error(err) {
+				console.error("something wrong occurred: " + err);
+			},
+			complete() {
+				console.log("done");
+			}
+		});
+
+		range(1, 200)
+			.pipe(
+				filter(x => x % 2 === 1),
+				map(x => x + x)
+			)
+			.subscribe(x => console.log(x));
+	</script>
+</body>
+
 </html>
