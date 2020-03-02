@@ -226,8 +226,8 @@ a {
 }
 
 .container {
-	border: 2px solid gray;
-	background-color: grey;
+	border: 2px solid slategrey;
+	background-color: slategrey;
 	border-radius: 5px;
 	padding: 10px;
 	margin: 10px 0;
