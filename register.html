@@ -131,9 +131,11 @@
 
 		<script>
 			function registerValidate() {
+				alert("test")
+				alert("second")
 				var pswField = document.forms["registerForm"]["psw"].value
-				var pswRepeatField = document.forms["registerForm"]["pswrepeat"].value
-
+				var pswRepeatField = document.forms["registerForm"]["pswRepeat"].value
+				
 				if (pswField == pswRepeatField) {
 					alert("Thanks you for registeration.")
 					return true
