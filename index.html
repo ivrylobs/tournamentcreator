@@ -22,8 +22,8 @@
         </div>
 
         <div class="menu_button">
-            <li class="signup"><a href="register.html">Sign up</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li id="signupbtn" class="signup"><a href="register.html">Sign up</a></li>
+            <li><a id="loginbtn" href="login.html">Login</a></li>
         </div>
     </nav>
 
@@ -52,44 +52,22 @@
 
 
     <script>
-        const {
-            range
-        } = rxjs;
-        const {
-            map,
-            filter
-        } = rxjs.operators;
-        const {
-            Observable
-        } = rxjs;
+        var xhttp = new XMLHttpRequest()
 
-        const observable = new Observable(subscriber => {
-            subscriber.next(1);
-            subscriber.next(2);
-            setTimeout(() => {
-                subscriber.next(00);
-                subscriber.complete();
-            }, 1000);
-        });
-
-        observable.subscribe({
-            next(x) {
-                console.log(x);
-            },
-            error(err) {
-                console.error("something wrong occurred: " + err);
-            },
-            complete() {
-                console.log("done");
+        xhttp.open("get", "/testapi")
+        xhttp.responseType = "json"
+        xhttp.send()
+        xhttp.onload = function() {
+            var response = xhttp.response
+            console.log(response.isLogin, response.username)
+            if (response.isLogin) {
+                document.getElementById("signupbtn").style.visibility = "hidden"
+                document.getElementById("loginbtn").style.visibility = "hidden"
+            } else {
+                document.getElementById("signupbtn").style.visibility = "visible"
+                document.getElementById("loginbtn").style.visibility = "visible"
             }
-        });
-
-        range(1, 200)
-            .pipe(
-                filter(x => x % 2 === 1),
-                map(x => x + x)
-            )
-            .subscribe(x => console.log(x));
+        }
     </script>
 </body>
 
