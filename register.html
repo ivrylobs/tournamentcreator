@@ -92,7 +92,7 @@
 			</div>
 		</nav>
 
-		<form action="/action_page.php">
+		<form name="registerForm" action="/register" method="POST" onsubmit="return registerValidate()">
 			<div class="container">
 				<h1>Register</h1>
 				<p class="reg">
@@ -116,11 +116,11 @@
 					required
 				/>
 
-				<label for="psw-repeat"><b>Repeat Password</b></label>
+				<label for="pswRepeat"><b>Repeat Password</b></label>
 				<input
 					type="password"
 					placeholder="Repeat Password"
-					name="psw-repeat"
+					name="pswRepeat"
 					required
 				/>
 				<hr />
@@ -128,5 +128,20 @@
 				<button type="submit" class="registerbtn">Register</button>
 			</div>
 		</form>
+
+		<script>
+			function registerValidate() {
+				var pswField = document.forms["registerForm"]["psw"].value
+				var pswRepeatField = document.forms["registerForm"]["pswrepeat"].value
+
+				if (pswField == pswRepeatField) {
+					alert("Thanks you for registeration.")
+					return true
+				} else {
+					alert("Password doesn't match please enter password again.")
+					return false
+				}
+			}
+		</script>
 	</body>
 </html>
