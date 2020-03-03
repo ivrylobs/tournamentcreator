@@ -10,6 +10,9 @@ const userDataSchema = new mongoose.Schema({
 });
 const Username = mongoose.model("UserData", userDataSchema);
 
+var isLogin = false
+var userHasLogged = ""
+
 //App using libraries.
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/"));
@@ -21,6 +24,22 @@ mongoose.connect("mongodb://localhost:27017/colosseumDB", {
 app.get("/", function(req, res) {
 	res.sendfile(__dirname + "/index.html");
 });
+
+app.get("/testapi", function(req, res) {
+	console.log(isLogin)
+	if (isLogin) {
+		res.send({
+			isLogin: true,
+			username: userHasLogged
+		})
+	} else {
+		res.send({
+			isLogin: false,
+			username: ""
+		})
+	}
+	
+})
 
 app.post("/register", function(req, res) {
 	var userName = req.body
@@ -43,9 +62,13 @@ app.post("/login", function(req, res) {
 			for(var i = 0; i < users.length; i++) {
 				if(userName.userName == users[i].email && userName.passWord == users[i].password) {
 					console.log("match", userName.userName, users[i].email, userName.passWord, users[i].password)
+					isLogin = true
+					userHasLogged = userName.userName
 					res.redirect("/")
+					break
 				} else {
 					console.log("Not Match", userName.userName, users[i].email, userName.passWord, users[i].password)
+					isLogin = false
 					res.sendFile(__dirname + "/login.html")
 				}
 			}
