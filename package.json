@@ -1,0 +1,23 @@
+{
+  "name": "tournamentcreator",
+  "version": "1.0.0",
+  "description": "This is Tournament Creator webapp.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo This command is work",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivrylobs/tournamentcreator.git"
+  },
+  "author": "Ivrylobs, Kokleto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivrylobs/tournamentcreator/issues"
+  },
+  "homepage": "https://github.com/ivrylobs/tournamentcreator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
