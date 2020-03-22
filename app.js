@@ -9,7 +9,7 @@ const adminPwd = "weLMkubRUUCM5k44";
 const cnnStrAdmin =
 	"mongodb+srv://admin-public:" +
 	adminPwd +
-	"@cluster0-4onrp.gcp.mongodb.net/tournamentDB";
+	"@cluster0-4onrp.gcp.mongodb.net/tournament-creatorDB";
 
 mongoose.connect(cnnStrAdmin, {
 	useNewUrlParser: true,
