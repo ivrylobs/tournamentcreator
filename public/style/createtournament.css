@@ -133,4 +133,24 @@ h2 {
 
 .form_select {
     padding: 50px;
+    background-color: gray;
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    color: white;
+}
+
+input[type="text"] {
+    width: 40%;
+    padding: 4px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type="text"]:focus {
+    background-color: #ddd;
+    outline: none;
 }
