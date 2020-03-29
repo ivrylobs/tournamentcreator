@@ -51,3 +51,23 @@ app.listen(process.env.PORT || 3000, function() {
 app.get("/", function(req, res) {
 	res.sendFile(__dirname + "/index.html");
 });
+
+app.get("/tournament", function (req, res) {
+	res.sendFile(__dirname + "/pages/tournament.html")
+})
+
+app.get("/communities", function (req, res) {
+	res.sendFile(__dirname + "/pages/communities.html")
+})
+
+app.get("/about", function (req, res) {
+	res.sendFile(__dirname + "/pages/about.html")
+})
+
+app.get("/register", function (req, res) {
+	res.sendFile(__dirname + "/pages/register.html")
+})
+
+app.get("/login", function (req, res) {
+	res.sendFile(__dirname + "/pages/login.html")
+})
