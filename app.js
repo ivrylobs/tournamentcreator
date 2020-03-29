@@ -91,6 +91,10 @@ app.get("/homeuser", function(req, res) {
 
 //HTTPRequest POST Method API.
 
+app.post("/user/signin", function(req, res) {
+	
+})
+
 app.post("/user/signup", function(req, res) {
 	const newUser = new Username({
 		username: req.body.username,
