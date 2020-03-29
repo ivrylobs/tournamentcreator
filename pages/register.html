@@ -147,49 +147,20 @@
 		<script>
 			function registerValidate() {
 				var status = false
-				const params = new URLSearchParams();
-				params.append(
-					"username",
-					document.forms["registerForm"]["username"].value
-				);
+				var pswField = document.forms["registerForm"]["password"].value;
+				var pswRepeatField =
+					document.forms["registerForm"]["rePassword"].value;
 
-				axios
-					.post("/user/uservalidate", params)
-					.then(function(response) {
-						console.log(response.data);
-						if (response.data == "username exist") {
-							document.getElementById(
-								"text_username"
-							).style.backgroundColor = "yellow";
-
-							console.log("Fail to register new username")
-							status = false
-						} else {
-
-							var pswField =
-								document.forms["registerForm"]["password"]
-									.value;
-							var pswRepeatField =
-								document.forms["registerForm"]["rePassword"]
-									.value;
-
-							if (pswField == pswRepeatField) {
-								alert("Thanks you for registeration.");
-								status = true
-							} else {
-								alert(
-									"Password doesn't match please enter password again."
-								);
-								status = false
-							}
-						}
-					})
-					.catch(function(err) {
-						console.log(err);
-					});
-
-				console.log(status)
-				return status
+				if (pswField == pswRepeatField) {
+					alert("Thanks you for registeration.");
+					status = true;
+				} else {
+					alert(
+						"Password doesn't match please enter password again."
+					);
+					status = false;
+				}
+				return status;
 			}
 
 			function userNameChange(event) {
@@ -204,7 +175,7 @@
 						if (response.data == "username exist") {
 							event.target.style.backgroundColor = "red";
 						} else {
-							event.target.style.backgroundColor = "#f1f1f1"
+							event.target.style.backgroundColor = "#f1f1f1";
 						}
 					})
 					.catch(function(err) {
