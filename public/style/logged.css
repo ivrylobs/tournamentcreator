@@ -130,3 +130,17 @@ h2 {
     color: white;
     padding: 16px;
 }
+
+.loggedbtn {
+    background-color: #4169e1;
+    color: white;
+    padding: 16px;
+    margin: auto;
+    margin-top: 50px;
+    border: none;
+    width: 20%;
+}
+
+.loggedbtn:hover {
+    opacity: 1;
+}
