@@ -1,74 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<link rel="stylesheet" href="style/indexStyle.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tournament Creator</title>
+	</head>
 
-<head>
-    <link rel="stylesheet" href="./style/indexStyle.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tournament Creator</title>
-    <script src="https://unpkg.com/rxjs@6.5.4/bundles/rxjs.umd.min.js"></script>
-</head>
+	<body>
+		<!--
+			Navbar section
+		-->
+		<nav>
+			<div class="logo">
+				<a href="/">
+					<img
+						src="/images/Tournaments_Text.png"
+						alt=""
+						height="44px"
+					/>
+				</a>
+				<li><a class="active" href="/">Home</a></li>
+				<li><a href="tournament.html">Tournament</a></li>
+				<li><a href="communities.html">Communities</a></li>
+				<li><a href="about.html">About</a></li>
+			</div>
 
-<body>
-    <nav>
-        <div class="logo">
-            <a href="/">
-                <img src="/images/Tournaments_Text.png" alt="" height="44px" />
-            </a>
-            <li><a class="active" href="/">Home</a></li>
-            <li><a href="tournament.html">Tournament</a></li>
-            <li><a href="communities.html">Communities</a></li>
-            <li><a href="about.html">About</a></li>
-        </div>
+			<div class="menu_button">
+				<li id="signupbtn" class="signup">
+					<a href="register.html">Sign up</a>
+				</li>
+				<li><a id="loginbtn" href="login.html">Login</a></li>
+			</div>
+		</nav>
 
-        <div class="menu_button">
-            <li id="signupbtn" class="signup"><a href="register.html">Sign up</a></li>
-            <li><a id="loginbtn" href="login.html">Login</a></li>
-        </div>
-    </nav>
+		<!--
+			Content section
+		-->
 
-    <div class="video" style="text-align: center; margin-top: 50px;">
-        <iframe width="1080" height="650" src="https://www.youtube.com/embed/s2m-29GVgNI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-	</iframe>
-    </div>
+		<div class="video" style="text-align: center; margin-top: 50px;">
+			<iframe
+				width="1080"
+				height="650"
+				src="https://www.youtube.com/embed/s2m-29GVgNI"
+				frameborder="0"
+				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			>
+			</iframe>
+		</div>
 
-    <div class="picture">
-        <img src="/images/community.png" width="35%" height="auto" alt="My test image" align="left">
-        <br><br><br><br><br><br><br>
-        <h2 class="heading">Tournament Communities</h2>
-        <p class="sub">Effortlessly host multiple tournaments.
-        </p>
-        <a class="btn btn-primary btn-lg -wider -xs-full-width" href="/communities.html">Find a community</a>
-    </div>
+		<div class="picture">
+			<img
+				src="/images/community.png"
+				width="35%"
+				height="auto"
+				alt="My test image"
+				align="left"
+			/>
+			<br /><br /><br /><br /><br /><br /><br />
+			<h2 class="heading">Tournament Communities</h2>
+			<p class="sub">Effortlessly host multiple tournaments.</p>
+			<a
+				class="btn btn-primary btn-lg -wider -xs-full-width"
+				href="/communities.html"
+				>Find a community</a
+			>
+		</div>
 
-    <div class="picture">
-        <img src="/images/sven.png" width="30%" height="auto" alt="My test image" align="right">
-        <br><br><br><br><br><br><br>
-        <h2>Enjoy your game, we'll handle the rest</h3>
-            <p>Tournament Creator has a variety of settings that can fit your friday night game with friends.</p>
-            <a class="btn btn-primary btn-lg -wider -xs-full-width" href="/tournament.html">Tournament</a>
-            <br>
-    </div>
+		<div class="picture">
+			<img
+				src="/images/sven.png"
+				width="30%"
+				height="auto"
+				alt="My test image"
+				align="right"
+			/>
+			<br /><br /><br /><br /><br /><br /><br />
+			<h2>Enjoy your game, we'll handle the rest</h2>
+			<p>
+				Tournament Creator has a variety of settings that can fit your
+				friday night game with friends.
+			</p>
+			<a
+				class="btn btn-primary btn-lg -wider -xs-full-width"
+				href="/tournament.html"
+				>Tournament</a
+			>
+			<br />
+		</div>
 
+		<!--
+			Script section
+		-->
 
-    <script>
-        var xhttp = new XMLHttpRequest()
+		<script>
+			var xhttp = new XMLHttpRequest();
 
-        xhttp.open("get", "/testapi")
-        xhttp.responseType = "json"
-        xhttp.send()
-        xhttp.onload = function() {
-            var response = xhttp.response
-            console.log(response.isLogin, response.username)
-            if (response.isLogin) {
-                document.getElementById("signupbtn").style.visibility = "hidden"
-                document.getElementById("loginbtn").style.visibility = "hidden"
-            } else {
-                document.getElementById("signupbtn").style.visibility = "visible"
-                document.getElementById("loginbtn").style.visibility = "visible"
-            }
-        }
-    </script>
-</body>
+			//Open HTTP Request session for examine whether user has logged in yet
+			//Request JSON data from backend to check isLogin field.
 
+			// try {
+			// 	xhttp.open("get", "/testapi");
+			// 	console.log("HTTP: Request successfully");
+			// } catch (error) {
+			// 	console.log(error);
+			// }
+
+			// xhttp.responseType = "json";
+
+			// try {
+			// 	xhttp.send();
+			// 	console.log("HTTP: Reqest has sent");
+			// 	xhttp.onload = function() {
+			// 		var response = xhttp.response;
+
+			// 		//Debugging Username.
+			// 		console.log(response.isLogin, response.username);
+
+			// 		if (response.isLogin) {
+			// 			document.getElementById("signupbtn").style.visibility =
+			// 				"hidden";
+			// 			document.getElementById("loginbtn").style.visibility =
+			// 				"hidden";
+			// 		} else {
+			// 			document.getElementById("signupbtn").style.visibility =
+			// 				"visible";
+			// 			document.getElementById("loginbtn").style.visibility =
+			// 				"visible";
+			// 		}
+			// 	};
+			// } catch (error) {
+			// 	console.log(error);
+			// }
+
+			
+		</script>
+	</body>
 </html>

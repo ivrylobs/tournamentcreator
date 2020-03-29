@@ -11,10 +11,20 @@ const cnnStrAdmin =
 	adminPwd +
 	"@cluster0-4onrp.gcp.mongodb.net/tournament-creatorDB";
 
-mongoose.connect(cnnStrAdmin, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-});
+mongoose.connect(
+	cnnStrAdmin,
+	{
+		useNewUrlParser: true,
+		useUnifiedTopology: true
+	},
+	function(error) {
+		if (error) {
+			console.log(error);
+		} else {
+			console.log("Connection: successful");
+		}
+	}
+);
 
 const fruitScheme = new mongoose.Schema({
 	name: String,
