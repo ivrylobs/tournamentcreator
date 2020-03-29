@@ -1,87 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!--
+
+<head>
+    <!--
 			Loading Script and Style section
 		-->
-		<link rel="stylesheet" href="style/indexStyle.css" />
-		<link rel="icon" type="image/png" href="images/Tournament.png" />
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style/indexStyle.css" />
+    <link rel="icon" type="image/png" href="images/Tournament.png" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-		<!--
+    <!--
 			Html Header Section.
 		-->
 
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Tournament Creator</title>
-	</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tournament Creator</title>
+</head>
 
-	<body>
-		<!--
+<body>
+    <!--
 			Navbar section
 		-->
-		<nav>
-			<div class="logo">
-				<a href="/">
-					<img
-						src="/images/Tournaments_Text.png"
-						alt=""
-						height="44px"
-					/>
-				</a>
-				<li><a class="active" href="/">Home</a></li>
-				<li><a href="tournament">Tournament</a></li>
-				<li><a href="communities">Communities</a></li>
-				<li><a href="about">About</a></li>
-			</div>
+    <nav>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/Tournaments_Text.png" alt="" height="44px" />
+            </a>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="tournament">Tournament</a></li>
+            <li><a href="communities">Communities</a></li>
+            <li><a href="about">About</a></li>
+        </div>
 
-			<div class="menu_button">
-				<li id="signupbtn" class="signup">
-					<a href="/register">Sign up</a>
-				</li>
-				<li><a id="loginbtn" href="/login">Login</a></li>
-			</div>
-		</nav>
+        <div class="menu_button">
+            <li id="signupbtn" class="signup">
+                <a href="/register">Sign up</a>
+            </li>
+            <li><a id="loginbtn" href="/login">Login</a></li>
+        </div>
+    </nav>
 
-		<!--
+    <!--
 			Content section
 		-->
 
-		<!-- Add a placeholder for the Twitch embed -->
-		<div id="twitch-embed"></div>
+    <!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
 
-		<!-- Load the Twitch embed script -->
-		<script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-		<!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
-		<script type="text/javascript">
-			new Twitch.Embed("twitch-embed", {
-				width: "100%",
-				height: 680,
-				channel: "FifaTargrean",
-				theme: "dark",
-				// only needed if your site is also embedded on embed.example.com and othersite.example.com
-				parent: ["embed.example.com", "othersite.example.com"]
-			});
-		</script>
-
-		
-		<div class="picture">
-			<img
-				src="/images/community.png"
-				width="35%"
-				height="auto"
-				alt="My test image"
-				align="left"
-			/>
-			<br /><br /><br /><br /><br /><br /><br />
-			<h2 class="heading">Tournament Communities</h2>
-			<p class="sub">Effortlessly host multiple tournaments.</p>
-			<a
-				class="btn btn-primary btn-lg -wider -xs-full-width"
-				href="/communities.html"
-				>Find a community</a
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+        new Twitch.Embed("twitch-embed", {
+            width: "100%",
+            height: 680,
+            channel: "FifaTargrean",
+            theme: "dark",
+            // only needed if your site is also embedded on embed.example.com and othersite.example.com 
+            parent: ["embed.example.com", "othersite.example.com"]
+        });
+    </script>
+    <div class="picture">
+        <img src="/images/community.png" width="35%" height="auto" alt="My test image" align="left" />
+        <br /><br /><br /><br /><br /><br /><br />
+        <h2 class="heading">Tournament Communities</h2>
+        <p class="sub">Effortlessly host multiple tournaments.</p>
+        <a class="btn btn-primary btn-lg -wider -xs-full-width" href="communities">Find a community</a
 			>
 		</div>
 
@@ -101,7 +87,7 @@
 			</p>
 			<a
 				class="btn btn-primary btn-lg -wider -xs-full-width"
-				href="/tournament.html"
+				href="tournament"
 				>Tournament</a
 			>
 			<br />
@@ -139,6 +125,8 @@
 				.catch(function(err) {
 					console.log("There is error", err);
 				});
+
+
 		</script>
 	</body>
 </html>

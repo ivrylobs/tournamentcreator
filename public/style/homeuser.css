@@ -140,8 +140,33 @@ h2 {
     margin-top: 50px;
     border: none;
     width: 20%;
+    font-size: 18px;
 }
 
 .loggedbtn:hover {
     opacity: 1;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4169e1;
+    border-color: #4169e1;
+}
+
+.btn-lg,
+.btn-group-lg>.btn {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 2px;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+}
+
+a {
+    text-decoration: none;
 }
