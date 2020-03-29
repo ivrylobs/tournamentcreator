@@ -85,6 +85,10 @@ app.get("/userhome", function(req, res) {
 	res.sendFile(__dirname + "/pages/userhome.html");
 });
 
+app.get("/logged", function(req, res) {
+	res.sendFile(__dirname + "/pages/logged.html")
+})
+
 //HTTPRequest POST Method API.
 
 app.post("/user/signup", function(req, res) {
