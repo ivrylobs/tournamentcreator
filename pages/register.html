@@ -146,30 +146,25 @@
 
 		<script>
 			function registerValidate() {
-				var status = false
 				var pswField = document.forms["registerForm"]["password"].value;
-				var pswRepeatField =
-					document.forms["registerForm"]["rePassword"].value;
+				var pswRepeatField = document.forms["registerForm"]["rePassword"].value;
 
 				if (pswField == pswRepeatField) {
 					alert("Thanks you for registeration.");
-					status = true;
+					window.location.href = "/homeuser"
 				} else {
-					alert(
-						"Password doesn't match please enter password again."
-					);
-					status = false;
+					alert("Password doesn't match please enter password again.");
 				}
-				return status;
+				return false;
 			}
 
 			function userNameChange(event) {
+
 				console.log(event.target.value);
 
 				const params = new URLSearchParams();
 				params.append("username", event.target.value);
-				axios
-					.post("/user/uservalidate", params)
+				axios.post("/user/uservalidate", params)
 					.then(function(response) {
 						console.log(response.data);
 						if (response.data == "username exist") {
