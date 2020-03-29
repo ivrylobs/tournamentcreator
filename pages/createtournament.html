@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style/userhome.css" />
+    <link rel="stylesheet" href="style/createtournament.css" />
     <link rel="icon" type="image/png" href="images/Tournament.png" />
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tournament Creator</title>
@@ -32,17 +33,47 @@
     </nav>
 
     <div class="form_select">
-        <form action="">
+        <form action="/tournament/add" name="create_tournament_form" method="POST" onsubmit="return addTournament()">
             <label for="">Tournament Name</label>
             <input type="text" name="text_tournament"><br <label for="">Game Type</label>
-            <select name="gameType" id="gameType"></select><br> 
+            <select name="gameType" id="gameType">
+                <option value="Moba">Moba</option>
+                <option value="FPS">FPS</option>
+                <option value="Sports">Sports</option>
+            </select><br> 
             <label for="">Participants/Teams</label>
-            <select name="teamnNumber" id="teamNumber"></select>
+            <select name="teamNumber" id="teamNumber"></select>
             <br>
+
+            <input type="date" name="tournament_date"><br>
 
             <input type="submit">
         </form>
     </div>
+
+    <script>
+        function addTournament() {
+
+            var tournamentName = document.querySelector("form")["text_tournament"].value
+            var tournamentType = document.querySelector("form")["gameType"].value
+            var teamNumber = document.querySelector("form")["teamNumber"].value
+            var tournamentDate = document.querySelector("form")["tournament_date"].value
+            const params = new URLSearchParams()
+            params.append("name", tournamentName)
+            params.append("type", tournamentType)
+            params.append("size", teamNumber)
+            params.append("date", tournamentDate)
+            params.append("user", "ivrylobs")
+
+            axios.post("/tournament/add", params).then(function(response) {
+                console.log(response.data)
+            }).catch(function(err) {
+                console.log(err)
+            })
+
+            return false
+        }
+    </script>
 </body>
 
 </html>
