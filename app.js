@@ -133,14 +133,10 @@ app.post("/user/uservalidate", function(req, res) {
 });
 
 app.post("/tournament/add", function(req, res) {
-	const newTournament = new Tournament({
-		name: String,
-		gameType: String,
-		teams: Number,
-		user: String,
-		participants: []
-	});
+	console.log(req.body)
+	res.send("successfull")
 });
+
 
 //Define running port of server-side.
 
