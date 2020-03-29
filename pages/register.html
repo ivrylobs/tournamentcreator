@@ -1,136 +1,209 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<link rel="stylesheet" href="./style/indexStyle.css" />
+		<link rel="icon" type="image/png" href="images/Tournament.png" />
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<head>
-    <link rel="stylesheet" href="./style/indexStyle.css" />
-    <link rel="icon" type="image/png" href="images/Tournament.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #333;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        /* Add padding to containers */
-        
-        .container {
-            padding: 16px;
-            background-color: white;
-            width: 60%;
-            margin: auto;
-            margin-top: 50px;
-            border-radius: 10px;
-        }
-        /* Full-width input fields */
-        
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            display: inline-block;
-            border: none;
-            background: #f1f1f1;
-        }
-        
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
-        /* Overwrite default styles of hr */
-        
-        hr {
-            border: 1px solid #f1f1f1;
-            margin-bottom: 25px;
-        }
-        /* Set a style for the submit button */
-        
-        .registerbtn {
-            background-color: #4169e1;
-            color: white;
-            padding: 16px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            opacity: 0.9;
-        }
-        
-        .registerbtn:hover {
-            opacity: 1;
-        }
-        /* Add a blue text color to links */
-        
-        a {
-            color: dodgerblue;
-        }
-        /* Set a grey background color and center the text of the "sign in" section */
-        
-        .signin {
-            background-color: #f1f1f1;
-            text-align: center;
-        }
-    </style>
-</head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				background: #333;
+			}
 
-<body>
-    <nav>
-        <div class="logo">
-            <a href="/">
-                <img src="/images/Tournaments_Text.png" alt="" height="44px" />
-            </a>
-            <li><a href="/">Home</a></li>
-            <li><a href="/tournament">Tournament</a></li>
-            <li><a href="/communities">Communities</a></li>
-            <li><a href="/about">About</a></li>
-        </div>
+			* {
+				box-sizing: border-box;
+			}
+			/* Add padding to containers */
 
-        <div class="menu_button">
-            <li><a class="active" href="/register">Sign up</a></li>
-            <li><a href="/login">Login</a></li>
-        </div>
-    </nav>
+			.container {
+				padding: 16px;
+				background-color: white;
+				width: 60%;
+				margin: auto;
+				margin-top: 50px;
+				border-radius: 10px;
+			}
+			/* Full-width input fields */
 
-    <form name="registerForm" action="/register" method="POST" onsubmit="return registerValidate()">
-        <div class="container">
-            <h1>Register</h1>
-            <p class="reg">
-                Please fill in this form to create an account.
-            </p>
-            <hr />
+			input[type="text"],
+			input[type="password"] {
+				width: 100%;
+				padding: 15px;
+				margin: 5px 0 22px 0;
+				display: inline-block;
+				border: none;
+				background: #f1f1f1;
+			}
 
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required />
+			input[type="text"]:focus,
+			input[type="password"]:focus {
+				background-color: #ddd;
+				outline: none;
+			}
+			/* Overwrite default styles of hr */
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required />
+			hr {
+				border: 1px solid #f1f1f1;
+				margin-bottom: 25px;
+			}
+			/* Set a style for the submit button */
 
-            <label for="pswRepeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="pswRepeat" required />
-            <hr />
+			.registerbtn {
+				background-color: #4169e1;
+				color: white;
+				padding: 16px 20px;
+				margin: 8px 0;
+				border: none;
+				cursor: pointer;
+				width: 100%;
+				opacity: 0.9;
+			}
 
-            <button type="submit" class="registerbtn">Register</button>
-        </div>
-    </form>
+			.registerbtn:hover {
+				opacity: 1;
+			}
+			/* Add a blue text color to links */
 
-    <script>
-        function registerValidate() {
-            var pswField = document.forms["registerForm"]["psw"].value
-            var pswRepeatField = document.forms["registerForm"]["pswRepeat"].value
+			a {
+				color: dodgerblue;
+			}
+			/* Set a grey background color and center the text of the "sign in" section */
 
-            if (pswField == pswRepeatField) {
-                alert("Thanks you for registeration.")
-                return true
-            } else {
-                alert("Password doesn't match please enter password again.")
-                return false
-            }
-        }
-    </script>
-</body>
+			.signin {
+				background-color: #f1f1f1;
+				text-align: center;
+			}
+		</style>
+	</head>
 
+	<body>
+		<nav>
+			<div class="logo">
+				<a href="/">
+					<img
+						src="/images/Tournaments_Text.png"
+						alt=""
+						height="44px"
+					/>
+				</a>
+				<li><a href="/">Home</a></li>
+				<li><a href="/tournament">Tournament</a></li>
+				<li><a href="/communities">Communities</a></li>
+				<li><a href="/about">About</a></li>
+			</div>
+
+			<div class="menu_button">
+				<li><a class="active" href="/register">Sign up</a></li>
+				<li><a href="/login">Login</a></li>
+			</div>
+		</nav>
+
+		<form
+			name="registerForm"
+			action="/user/signup"
+			method="POST"
+			onsubmit="return registerValidate()"
+		>
+			<div class="container">
+				<h1>Register</h1>
+				<p class="reg">
+					Please fill in this form to create an account.
+				</p>
+				<hr />
+
+				<label for="username"><b>Email</b></label>
+				<input
+					type="text"
+					placeholder="Enter Email"
+					name="username"
+					id="text_username"
+					required
+					onchange="userNameChange(event)"
+				/>
+
+				<label for="password"><b>Password</b></label>
+				<input
+					type="password"
+					placeholder="Enter Password"
+					name="password"
+					required
+				/>
+
+				<label for="rePassword"><b>Repeat Password</b></label>
+				<input
+					type="password"
+					placeholder="Repeat Password"
+					name="rePassword"
+					required
+				/>
+				<hr />
+
+				<button type="submit" class="registerbtn">Register</button>
+			</div>
+		</form>
+
+		<script>
+			function registerValidate() {
+				const params = new URLSearchParams();
+				params.append(
+					"username",
+					document.forms["registerForm"]["username"].value
+				);
+				axios
+					.post("/user/uservalidate", params)
+					.then(function(response) {
+						console.log(response.data);
+						if (response.data == "username exist") {
+							document.getElementById(
+								"text_username"
+                            ).style.backgroundColor = "red";
+							return false
+						} else {
+
+							var pswField =
+								document.forms["registerForm"]["password"]
+									.value;
+							var pswRepeatField =
+								document.forms["registerForm"]["rePassword"]
+									.value;
+
+							if (pswField == pswRepeatField) {
+								alert("Thanks you for registeration.");
+								return true;
+							} else {
+								alert(
+									"Password doesn't match please enter password again."
+								);
+								return false;
+							}
+						}
+					})
+					.catch(function(err) {
+						console.log(err);
+					});
+			}
+
+			function userNameChange(event) {
+				console.log(event.target.value);
+
+				const params = new URLSearchParams();
+				params.append("username", event.target.value);
+				axios
+					.post("/user/uservalidate", params)
+					.then(function(response) {
+						console.log(response.data);
+						if (response.data == "username exist") {
+							event.target.style.backgroundColor = "red";
+						} else {
+							event.target.style.backgroundColor = "#f1f1f1"
+						}
+					})
+					.catch(function(err) {
+						console.log(err);
+					});
+			}
+		</script>
+	</body>
 </html>
