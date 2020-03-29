@@ -146,11 +146,13 @@
 
 		<script>
 			function registerValidate() {
+				var status = false
 				const params = new URLSearchParams();
 				params.append(
 					"username",
 					document.forms["registerForm"]["username"].value
 				);
+
 				axios
 					.post("/user/uservalidate", params)
 					.then(function(response) {
@@ -158,8 +160,10 @@
 						if (response.data == "username exist") {
 							document.getElementById(
 								"text_username"
-                            ).style.backgroundColor = "red";
-							return false
+							).style.backgroundColor = "yellow";
+
+							console.log("Fail to register new username")
+							status = false
 						} else {
 
 							var pswField =
@@ -171,18 +175,21 @@
 
 							if (pswField == pswRepeatField) {
 								alert("Thanks you for registeration.");
-								return true;
+								status = true
 							} else {
 								alert(
 									"Password doesn't match please enter password again."
 								);
-								return false;
+								status = false
 							}
 						}
 					})
 					.catch(function(err) {
 						console.log(err);
 					});
+
+				console.log(status)
+				return status
 			}
 
 			function userNameChange(event) {
