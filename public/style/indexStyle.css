@@ -271,3 +271,7 @@ a {
 .mySlides {
     display: none;
 }
+
+#twitch-embed {
+    padding: 20px;
+}
