@@ -64,9 +64,13 @@
             params.append("size", teamNumber)
             params.append("date", tournamentDate)
             params.append("user", "ivrylobs")
+            params.append("participants", [])
 
             axios.post("/tournament/add", params).then(function(response) {
                 console.log(response.data)
+                if (response.data == "successfull") {
+                    window.location.href = "/homeuser"
+                }
             }).catch(function(err) {
                 console.log(err)
             })

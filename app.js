@@ -134,9 +134,10 @@ app.post("/user/uservalidate", function(req, res) {
 
 app.post("/tournament/add", function(req, res) {
 	console.log(req.body)
+
+
 	res.send("successfull")
 });
-
 
 //Define running port of server-side.
 
