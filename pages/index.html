@@ -7,15 +7,16 @@
 		-->
     <link rel="stylesheet" href="style/indexStyle.css" />
     <link rel="icon" type="image/png" href="images/Tournament.png" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://embed.twitch.tv/embed/v1.js"></script>
     <!--
 			Html Header Section.
 		-->
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tournament Creator</title>
+	<title>Tournament Creator</title>
+	
 </head>
 
 <body>
@@ -32,7 +33,6 @@
             <li><a href="communities">Communities</a></li>
             <li><a href="about">About</a></li>
         </div>
-
         <div class="menu_button">
             <li id="signupbtn" class="signup">
                 <a href="/register">Sign up</a>
@@ -49,7 +49,7 @@
     <div id="twitch-embed"></div>
 
     <!-- Load the Twitch embed script -->
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    
 
     <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
     <script type="text/javascript">
@@ -98,8 +98,6 @@
 		-->
 
 		<script>
-			var xhttp = new XMLHttpRequest();
-
 			//Open HTTP Request session for examine whether user has logged in yet
 			//Request JSON data from backend to check isLogin field.
 
