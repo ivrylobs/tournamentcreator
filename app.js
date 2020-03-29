@@ -81,12 +81,12 @@ app.get("/login", function(req, res) {
 	res.sendFile(__dirname + "/pages/login.html");
 });
 
-app.get("/userhome", function(req, res) {
-	res.sendFile(__dirname + "/pages/userhome.html");
+app.get("/createtournament", function(req, res) {
+	res.sendFile(__dirname + "/pages/createtournament.html");
 });
 
-app.get("/logged", function(req, res) {
-	res.sendFile(__dirname + "/pages/logged.html")
+app.get("/homeuser", function(req, res) {
+	res.sendFile(__dirname + "/pages/homeuser.html")
 })
 
 //HTTPRequest POST Method API.
@@ -100,7 +100,7 @@ app.post("/user/signup", function(req, res) {
 
 	newUser.save();
 	console.log("Username: added successfull")
-	res.send("Added newuser");
+	res.sendFile(__dirname + "/pages/homeuser.html")
 });
 
 app.post("/user/uservalidate", function(req, res) {
