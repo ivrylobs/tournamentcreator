@@ -19,7 +19,7 @@ mongoose.connect(
 	},
 	function(error) {
 		if (error) {
-			console.log(error);
+			console.log("There is error", error);
 		} else {
 			console.log("Connection: successful");
 		}
