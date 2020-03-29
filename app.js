@@ -49,7 +49,7 @@ app.listen(process.env.PORT || 3000, function() {
 });
 
 app.get("/", function(req, res) {
-	res.sendFile(__dirname + "/index.html");
+	res.sendFile(__dirname + "/pages/index.html");
 });
 
 app.get("/tournament", function (req, res) {
