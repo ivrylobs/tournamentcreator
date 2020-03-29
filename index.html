@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--
+			Loading Script and Style section
+		-->
 		<link rel="stylesheet" href="style/indexStyle.css" />
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+		<!--
+			Html Header Section.
+		-->
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Tournament Creator</title>
@@ -96,45 +105,36 @@
 
 		<script>
 			var xhttp = new XMLHttpRequest();
+			const axios = require('axios').default;
 
+			
 			//Open HTTP Request session for examine whether user has logged in yet
 			//Request JSON data from backend to check isLogin field.
 
-			// try {
-			// 	xhttp.open("get", "/testapi");
-			// 	console.log("HTTP: Request successfully");
-			// } catch (error) {
-			// 	console.log(error);
-			// }
+			axios
+				.get("/testapi")
+				.then(function(res) {
+					console.log(res);
 
-			// xhttp.responseType = "json";
+					console.log(res.isLogin, res.username);
 
-			// try {
-			// 	xhttp.send();
-			// 	console.log("HTTP: Reqest has sent");
-			// 	xhttp.onload = function() {
-			// 		var response = xhttp.response;
+					if (res.isLogin) {
+						document.getElementById("signupbtn").style.visibility =
+							"hidden";
+						document.getElementById("loginbtn").style.visibility =
+							"hidden";
+					} else {
+						document.getElementById("signupbtn").style.visibility =
+							"visible";
+						document.getElementById("loginbtn").style.visibility =
+							"visible";
+					}
+				})
+				.catch(function(err) {
+					console.log("There is error", err);
+				});
 
-			// 		//Debugging Username.
-			// 		console.log(response.isLogin, response.username);
 
-			// 		if (response.isLogin) {
-			// 			document.getElementById("signupbtn").style.visibility =
-			// 				"hidden";
-			// 			document.getElementById("loginbtn").style.visibility =
-			// 				"hidden";
-			// 		} else {
-			// 			document.getElementById("signupbtn").style.visibility =
-			// 				"visible";
-			// 			document.getElementById("loginbtn").style.visibility =
-			// 				"visible";
-			// 		}
-			// 	};
-			// } catch (error) {
-			// 	console.log(error);
-			// }
-
-			
 		</script>
 	</body>
 </html>
