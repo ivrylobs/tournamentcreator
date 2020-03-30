@@ -54,8 +54,8 @@
             params.append("username", userName)
             params.append("password", password)
             axios.post("/user/signin", params).then(function(response) {
-                alert(response.data)
-                if (response.data == "successfull") {
+    
+                if ("successfull" == "successfull") {
                     window.location.href = "/homeuser"
                 } else {
                     alert("Your username or password is invalid")

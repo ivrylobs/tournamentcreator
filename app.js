@@ -89,7 +89,7 @@ app.get("/homeuser", function(req, res) {
 	res.sendFile(__dirname + "/pages/homeuser.html")
 })
 
-app.get("/tournament/bracket", function(req, res) {
+app.get("/bracket", function(req, res) {
 	res.sendFile(__dirname + "/pages/bracket.html")
 })
 

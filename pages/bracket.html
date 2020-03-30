@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link rel="icon" type="image/png" href="images/Tournament.png" />
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script src="https://underscorejs.org/underscore-min.js"></script>
+		<link rel="stylesheet" href="./style/indexStyle.css" />
+		<link rel="icon" type="image/png" href="images/Tournament.png" />
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="https://underscorejs.org/underscore-min.js"></script>
+		<title>Tournament Bracket</title>
 
 		<style>
 			html,
@@ -14,6 +18,8 @@
 				width: 100%;
 				min-height: 100%;
 				font-family: "Arial", sans-serif;
+				padding-top: 30px;
+				text-align: center;
 			}
 			.metroBtn {
 				background-color: #2e7bcc;
@@ -164,6 +170,25 @@
 		</style>
 	</head>
 	<body>
+		<nav>
+			<div class="logo">
+				<a href="/">
+					<img
+						src="/images/Tournaments_Text.png"
+						alt=""
+						height="44px"
+					/>
+				</a>
+				<li><a class="active" href="/">Home</a></li>
+				<li><a href="tournament">Tournament</a></li>
+				<li><a href="communities">Communities</a></li>
+				<li><a href="about">About</a></li>
+			</div>
+
+			<div class="menu_button">
+				<li><a id="loginbtn" href="/">Log out</a></li>
+			</div>
+		</nav>
 		<div id="add" class="metroBtn">Add Bracket</div>
 		<div id="clear" class="metroBtn">Clear</div>
 		<div class="brackets" id="brackets"></div>
@@ -172,75 +197,43 @@
 			$(document).on("ready", function() {
 				var knownBrackets = [2, 4, 8, 16, 32, 64], // brackets with "perfect" proportions (full fields, no byes)
 					exampleTeams = _.shuffle([
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"New Jersey Devils",
-						"New York Islanders",
-						"New York Rangers",
-						"Philadelphia Flyers",
-						"Pittsburgh Penguins",
-						"Boston Bruins",
-						"Buffalo Sabres",
-						"Montreal Canadiens",
-						"Ottawa Senators",
-						"Toronto Maple Leafs",
-						"Carolina Hurricanes",
-						"Florida Panthers",
-						"Tampa Bay Lightning",
-						"Washington Capitals",
-						"Winnipeg Jets",
-						"Chicago Blackhawks",
-						"Columbus Blue Jackets",
-						"Detroit Red Wings",
-						"Nashville Predators",
-						"St. Louis Blues",
-						"Calgary Flames",
-						"Colorado Avalanche",
-						"Edmonton Oilers",
-						"Minnesota Wild",
-						"Vancouver Canucks",
-						"Anaheim Ducks",
-						"Dallas Stars",
-						"Los Angeles Kings",
-						"Phoenix Coyotes",
-						"San Jose Sharks",
-						"Montreal Wanderers",
-						"Quebec Nordiques",
-						"Hartford Whalers"
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME",
+						"DME"
 					]), // because a bracket needs some teams!
 					bracketCount = 0;
 				console.log($(exampleTeams).length);
