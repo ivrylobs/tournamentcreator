@@ -89,10 +89,36 @@ app.get("/homeuser", function(req, res) {
 	res.sendFile(__dirname + "/pages/homeuser.html")
 })
 
+app.get("/tournament/bracket", function(req, res) {
+	res.sendFile(__dirname + "/pages/bracket.html")
+})
+
 //HTTPRequest POST Method API.
 
 app.post("/user/signin", function(req, res) {
+
+	var loginStatus = ""
 	
+	Username.find(function(err, response) {
+		if (err) {
+			console.log("Login: Fail there is error while logging in.")
+		} else {
+			response.forEach(function(result) {
+				console.log(result.username, result.password)
+				console.log(req.body.username, md5(req.body.password))
+	
+				if (req.body.username == result.username && md5(req.body.password) == result.password) {
+					loginStatus = "successfull"
+					console.log(loginStatus)
+				} else {
+					loginStatus = "failed"
+				}
+			})
+		}
+	})
+
+	console.log(loginStatus)
+	res.send(loginStatus)
 })
 
 app.post("/user/signup", function(req, res) {
@@ -104,7 +130,7 @@ app.post("/user/signup", function(req, res) {
 
 	newUser.save();
 	console.log("Username: added successfull")
-	res.sendFile(__dirname + "/pages/homeuser.html")
+	res.send("successfull")
 });
 
 app.post("/user/uservalidate", function(req, res) {
