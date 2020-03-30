@@ -1,97 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<link rel="stylesheet" href="./style/indexStyle.css" />
+		<link rel="icon" type="image/png" href="images/Tournament.png" />
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<head>
-    <link rel="stylesheet" href="./style/indexStyle.css" />
-    <link rel="icon" type="image/png" href="images/Tournament.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tournament Creator</title>
-</head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tournament Creator</title>
+	</head>
 
-<body>
-    <nav>
-        <div class="logo">
-            <a href="/">
-                <img src="/images/Tournaments_Text.png" alt="" width="210" />
-            </a>
-            <li><a href="/">Home</a></li>
-            <li><a class="active" href="/tournament">Tournament</a></li>
-            <li><a href="/communities">Communities</a></li>
-            <li><a href="/about">About</a></li>
-        </div>
+	<body>
+		<nav>
+			<div class="logo">
+				<a href="/">
+					<img
+						src="/images/Tournaments_Text.png"
+						alt=""
+						width="210"
+					/>
+				</a>
+				<li><a href="/">Home</a></li>
+				<li><a class="active" href="/tournament">Tournament</a></li>
+				<li><a href="/communities">Communities</a></li>
+				<li><a href="/about">About</a></li>
+			</div>
 
-        <div class="menu_button">
-            <li class="signup"><a href="/register">Sign up</a></li>
-            <li><a href="/login">Login</a></li>
-        </div>
+			<div class="menu_button">
+				<li class="signup"><a href="/register">Sign up</a></li>
+				<li><a href="/login">Login</a></li>
+			</div>
 
-        <style>
-            table {
-                font-family: arial, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-            
-            td,
-            th {
-                text-align: left;
-                padding: 25px;
-                color: white;
-                border-bottom: 1px solid black;
-            }
-            
-            th {
-                background-color: #4169e1;
-            }
-            
-            td {
-                background-color: #474e5d;
-            }
-        </style>
-    </nav>
+			<style>
+				table {
+					font-family: arial, sans-serif;
+					border-collapse: collapse;
+					width: 100%;
+				}
 
-    <h2>Tournament</h2>
+				td,
+				th {
+					text-align: left;
+					padding: 25px;
+					color: white;
+					border-bottom: 1px solid black;
+				}
 
-    <table>
-        <tr>
-            <th>Tournament name</th>
-            <th>Game</th>
-            <th>Time</th>
-        </tr>
-        <tr>
-            <td>Rov pro league 2020 summer</td>
-            <td>Realm of valor</td>
-            <td>March 03, 2020</td>
-        </tr>
-        <tr>
-            <td>CSGO MSI</td>
-            <td>Counter strike</td>
-            <td>March 03, 2020</td>
-        </tr>
-        <tr>
-            <td>Dota2 Khon kaen</td>
-            <td>Dota2</td>
-            <td>March 02, 2020</td>
-        </tr>
-        <tr>
-            <td>Hand simulator DME2020</td>
-            <td>Hand simulator</td>
-            <td>February 02, 2020</td>
-        </tr>
-        <tr>
-            <td>RB6 Esan Tournament </td>
-            <td>Tom Clancy's Rainbow Six</td>
-            <td>January 01, 2020</td>
-        </tr>
-        <tr>
-            <td>league of legends Udon 2020</td>
-            <td>League of legends</td>
-            <td>January 01, 2020</td>
-        </tr>
-    </table>
+				th {
+					background-color: #4169e1;
+				}
 
-    <script></script>
-</body>
+				td {
+					background-color: #474e5d;
+				}
+			</style>
+		</nav>
 
+		<h2>Tournament</h2>
+
+        <table>
+            <tr>
+				<th>Tournament name</th>
+				<th>Game</th>
+				<th>Time</th>
+			</tr>
+        </table>
+		<table id="tournamentTable">
+			
+			<tr>
+				<td>Rov pro league 2020 summer</td>
+				<td>Realm of valor</td>
+				<td>March 03, 2020</td>
+			</tr>
+			<tr>
+				<td>CSGO MSI</td>
+				<td>Counter strike</td>
+				<td>March 03, 2020</td>
+			</tr>
+			<tr>
+				<td>Dota2 Khon kaen</td>
+				<td>Dota2</td>
+				<td>March 02, 2020</td>
+			</tr>
+			<tr>
+				<td>Hand simulator DME2020</td>
+				<td>Hand simulator</td>
+				<td>February 02, 2020</td>
+			</tr>
+			<tr>
+				<td>RB6 Esan Tournament</td>
+				<td>Tom Clancy's Rainbow Six</td>
+				<td>January 01, 2020</td>
+			</tr>
+			<tr>
+				<td>league of legends Udon 2020</td>
+				<td>League of legends</td>
+				<td>January 01, 2020</td>
+			</tr>
+		</table>
+
+		<script>
+			var table = document.getElementById("tournamentTable");
+
+			axios
+				.get("/gettournament")
+				.then(function(response) {
+                    console.log(response);
+                    response.data.forEach(function(result) {
+                        console.log(result)
+                        var row = table.insertRow(0)
+                        var cell1 = row.insertCell(0)
+                        var cell2 = row.insertCell(1)
+                        var cell3 = row.insertCell(2)
+
+                        cell1.innerHTML = result.name
+                        cell2.innerHTML = result.gameType
+                        cell3.innerHTML = result.date
+                    });
+				})
+				.catch(function(error) {
+					console.log(error);
+				});
+		</script>
+	</body>
 </html>

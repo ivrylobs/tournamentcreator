@@ -43,6 +43,7 @@ const tournamentSceheme = new mongoose.Schema({
 	gameType: String,
 	teams: Number,
 	user: String,
+	date: String,
 	participants: []
 });
 
@@ -92,6 +93,19 @@ app.get("/homeuser", function(req, res) {
 app.get("/bracket", function(req, res) {
 	res.sendFile(__dirname + "/pages/bracket.html")
 })
+
+app.get("/gettournament", function(req, res) {
+	Tournament.find(function(err, response) {
+		if (err) {
+			console.log(err)
+		} else {
+			console.log(response)
+			res.send(response)
+		}
+	})
+})
+
+
 
 //HTTPRequest POST Method API.
 
@@ -160,7 +174,24 @@ app.post("/user/uservalidate", function(req, res) {
 
 app.post("/tournament/add", function(req, res) {
 	console.log(req.body)
+	const newTournament = new Tournament({
+		name: req.body.name,
+		gameType: req.body.type,
+		teams: 8,
+		user: "USERabc456",
+		date: req.body.date,
+		participants: []
+	})
 
+	newTournament.save()
+
+	Tournament.find(function(err, response) {
+		if (err) {
+			console.log(err)
+		} else {
+			console.log(response)
+		}
+	})
 
 	res.send("successfull")
 });
