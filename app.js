@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const md5 = require("md5");
 
 const app = express();
+//Test debuging console
+console.log("Debugging initiated")
 
 //Assign public directory for static file.
 //Define using body Request parser.
@@ -28,12 +30,15 @@ mongoose.connect(
 	},
 	function(error) {
 		if (error) {
-			console.log("There is error", error);
+			console.log("There is error: ", error.message);
 		} else {
 			console.log("MongdoDB Connection: successful");
 		}
 	}
 );
+
+//Debugging zone
+console.log("Continue to create data model")
 
 //Create Data Schemes
 //Create Mongoose Data model.
